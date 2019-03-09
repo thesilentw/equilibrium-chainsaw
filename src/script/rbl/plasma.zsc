@@ -80,7 +80,7 @@ class RBLPlasmaBall : Actor {
 		Radius 13;
 		Height 8;
 		Speed 45;
-		Damage 15;
+		Damage 17;
 		Projectile;
 		+RANDOMIZE
 		+ZDOOMTRANS

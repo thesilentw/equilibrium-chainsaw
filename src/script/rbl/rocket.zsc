@@ -2,7 +2,8 @@
 // Rocket launcher
 //
 // The rebalanced Rocket Launcher fires slightly slower, but the rockets
-// are much faster, and explode more quickly.
+// are much faster. In addtion, the warhead has been upgraded with additional
+// explosives, causing much more direct damage.
 //
 // --------------------------------------------------------------------------
 
@@ -57,7 +58,7 @@ class RBLRocket : FastProjectile {
 		Radius 11;
 		Height 8;
 		Speed 80;
-		Damage 20;
+		Damage 72;
 		Projectile;
 		//+RANDOMIZE
 		+ROCKETTRAIL

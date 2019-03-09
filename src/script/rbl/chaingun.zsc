@@ -2,7 +2,8 @@
 // Chaingun
 //
 // The rebalanced Chaingun is no longer quite as accurate at long range, and
-// now has a minimum burst size of 4 rounds.
+// now has a minimum burst size of 4 rounds. It has benefitted from a hotter
+// ammo loading, as well.
 //
 // --------------------------------------------------------------------------
 
@@ -33,7 +34,7 @@ class RBLChaingun : EQCWeapon replaces Chaingun {
 			TNT1 A 0 A_GunFlash();
 			CHGG ABAB 4 {
 				A_PlaySound ("weapons/chngun", CHAN_WEAPON);
-				A_FireBullets(0.9, 0.9, -1, 5, flags: FBF_USEAMMO);
+				A_FireBullets(0.9, 0.9, -1, 7, flags: FBF_USEAMMO);
 				A_AlertMonsters();
 			}
 			CHGG B 0 A_ReFire;

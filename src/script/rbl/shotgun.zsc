@@ -2,6 +2,7 @@
 // Shotgun
 //
 // The rebalanced shotgun trades in the duckbill barrel for a more normal spread. 
+// In addition, it now fires a heavier buckshot loading, with additional pellets.
 //
 // --------------------------------------------------------------------------
 
@@ -33,7 +34,7 @@ class RBLShotgun : EQCWeapon replaces Shotgun {
 			//SHTG A 3;
 			SHTG A 7 {
 				A_PlaySound ("weapons/shotgf", CHAN_WEAPON);
-				A_FireBullets(3, 1.5, 7, 5);
+				A_FireBullets(3, 1.5, 10, 5); //buffed damage
 				A_AlertMonsters();
 			}
 			SHTG BC 5;

@@ -2,7 +2,7 @@
 // Pistol 
 //
 // The rebalanced pistol is very similar - pinpoint precision, low damage.
-// Cyclic rate has been slightly increased.
+// Cyclic rate has been slightly increased, and it now uses 9mm +P loads.
 //
 // --------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ class RBLPistol : EQCWeapon replaces Pistol {
 			PISG B 3 {
 				A_PlaySound ("weapons/pistol", CHAN_WEAPON);
 				A_AlertMonsters();
-				A_FireBullets(0.5, 0.5, 1, 5);
+				A_FireBullets(0.5, 0.5, 1, 7); //damage buffed
 				A_GunFlash();
 			}
 			PISG C 3 A_WeaponOffset(0, 2, WOF_ADD);
