@@ -1,4 +1,5 @@
 // Extra Sounds
 // plasma gun ricochet
 weapons/plasma_bounce lpimp
+weapons/punch dspunch
 // eof

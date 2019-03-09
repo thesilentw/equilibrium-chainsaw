@@ -16,6 +16,7 @@ class RBLFist : EQCWeapon replaces Fist {
 		Weapon.AmmoType "";
 		Obituary "$OB_MPFIST";
 		Tag "$TAG_FIST";
+		AttackSound "weapons/punch";
 		+WEAPON.WIMPY_WEAPON
 		+WEAPON.MELEEWEAPON
 	}
@@ -33,7 +34,14 @@ class RBLFist : EQCWeapon replaces Fist {
 		Fire:
 			PUNG A 4 A_WeaponOffset(24, 42, WOF_ADD);
 			PUNG B 3 A_WeaponOffset(-24, -42, WOF_ADD);
-			PUNG C 2 A_Punch;
+			PUNG C 2 {
+				if (countInv("PowerStrength") > 0) {
+					A_CustomPunch(20 * random(1, 10), TRUE);
+				}
+				else {
+					A_CustomPunch(2 * random(1, 10), TRUE);
+				}
+			}
 			PUNG D 4;
 			PUNG C 5;
 			PUNG B 6 A_ReFire("Hold"); 
@@ -43,7 +51,14 @@ class RBLFist : EQCWeapon replaces Fist {
 			Goto Ready;
 		Hold:
 			PUNG B 3;
-			PUNG C 2 A_Punch;
+			PUNG C 2 {
+				if (countInv("PowerStrength") > 0) {
+					A_CustomPunch(20 * random(1, 10), TRUE);
+				}
+				else {
+					A_CustomPunch(2 * random(1, 10), TRUE);
+				}
+			}
 			PUNG D 4;
 			PUNG C 5;
 			PUNG B 4 A_ReFire("Hold"); 
@@ -66,7 +81,7 @@ class RBLFist : EQCWeapon replaces Fist {
 			}
 		}
 
-		int damage = random[Punch](1, 10) << 1;
+		int damage = 2*(random[Punch](1, 10) << 1);
 
 		if (FindInventory("PowerStrength"))
 			damage *= 10;
