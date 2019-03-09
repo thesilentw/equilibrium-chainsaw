@@ -1,0 +1,119 @@
+/// EQCWeapon.zsc
+///
+/// Prototype weapon
+/// Combo flag stuff by Matt (hideous destructor)
+///
+
+Class EQCWeapon : DoomWeapon {
+	default {
+		inventory.pickupMessage "OBTAINED DEFAULT WEAPON - THIS IS A BUG";
+		weapon.slotNumber 1;
+		weapon.SelectionOrder 1000;
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 10;
+		Weapon.AmmoType "Clip";
+		Weapon.BobStyle "Normal";
+		Weapon.BobRangeX 1.5;
+		Weapon.BobRangeY 0.5;
+		+WEAPON.NODEATHINPUT;
+		weapon.upsound "DSSGCOCK";
+	}
+	
+	/*
+        Here are some flag groups for A_WeaponReady.
+
+        The first by default enables all weapon keys at once, letting you do everything.
+
+        The second disables all buttons and deselect, leaving only the weapon bobbing
+        (assuming the player has enabled it). This allows you to have a "fake" ready state
+        in which you are actually directly checking input instead of the native ready code,
+        or adding a long static frame that would look really awkward if frozen
+        while the player walks.
+    */
+    enum ComboWeaponConstants {
+        WRF_ALL =	WRF_ALLOWRELOAD|WRF_ALLOWZOOM|
+					WRF_ALLOWUSER1|WRF_ALLOWUSER2|
+					WRF_ALLOWUSER3|WRF_ALLOWUSER4,
+        WRF_NONE = 	WRF_NOFIRE|WRF_DISABLESWITCH,
+    }
+
+
+    /*
+        A wrapper for SetPSprite.
+        Basically SetStateLabel for weapon overlays.
+
+        I'm not sure if the player null pointer check is necessary...
+    */
+    action void SetWeaponState(statelabel st,int layer=PSP_WEAPON) {
+        if(player) player.setpsprite(layer,invoker.findstate(st));
+    }
+
+
+    /*
+        These are shortcuts for checking player input.
+
+        Obviously you can just type out the whole thing, but if you're
+        in the middle of typing out lots of different potential combos
+        you will have plenty enough to keep track of without trying to
+        remember exactly what that long string is that you need to get
+        in order to do the check.
+    */
+    action bool PressingFire(){return player.cmd.buttons & BT_ATTACK;}
+    action bool PressingAltfire(){return player.cmd.buttons & BT_ALTATTACK;}
+    action bool PressingReload(){return player.cmd.buttons & BT_RELOAD;}
+    action bool PressingZoom(){return player.cmd.buttons & BT_ZOOM;}
+    action bool PressingUser1(){return player.cmd.buttons & BT_USER1;}
+    action bool PressingUser2(){return player.cmd.buttons & BT_USER2;}
+    action bool PressingUser3(){return player.cmd.buttons & BT_USER3;}
+    action bool PressingUser4(){return player.cmd.buttons & BT_USER4;}
+    /*
+        EDIT: Have a couple more:
+    */
+    action bool PressingUse(){return player.cmd.buttons & BT_USE;}
+    action bool JustPressed(int which) {// "which" being any BT_* value, mentioned above or not
+        return player.cmd.buttons & which && !(player.oldbuttons & which);
+    }
+    action bool JustReleased(int which) {
+        return !(player.cmd.buttons & which) && player.oldbuttons & which;
+    }
+
+
+    /*
+        You can set up these shortcuts for any player input,
+        and any arbitrary combination thereof:
+        "TurnSpeed", "ForwardMove", "CrouchRunning", etc. etc. etc.,
+        and you can of course add new variables to the weapon to keep track
+        of certain states at certain times...
+
+        (I don't actually use these examples below, as these situations don't come up
+        in HD enough to call for them, but some of my bullet point examples can use them.)
+    */
+    action double TurnSpeed() {
+        return((double(player.cmd.pitch),double(player.cmd.yaw)).length());
+    }
+    double LastCheckedTurnSpeed;
+
+    action bool JustPressedFire() {
+        return (player.cmd.buttons & BT_ATTACK && !(player.oldbuttons & BT_ATTACK));
+    }
+    int PreviousTicsButtons[16];
+	
+	States {
+		Ready:
+			SHTG A 1 A_WeaponReady();
+			Loop;
+		Select:
+			SHTG A 1 A_Raise();
+			Loop;
+		Deselect:
+			SHTG A 1 A_Lower();
+			Loop;
+		Fire:
+			SHTG A 10 A_FireBullets(1, 1, 1, 10);
+			SHTG A 1 A_WeaponReady();
+			Goto Ready;
+		Spawn:
+			TLGL A -1;
+			Stop;
+	}
+}

@@ -1,0 +1,15 @@
+version "3.4"
+#include "script/EQCWeapon.zsc"
+#include "script/marine.zsc"
+
+//rebalance
+#include "script/rbl/fist.zsc"
+#include "script/rbl/pistol.zsc"
+#include "script/rbl/shotgun.zsc"
+#include "script/rbl/chaingun.zsc"
+#include "script/rbl/rocket.zsc"
+#include "script/rbl/plasma.zsc"
+#include "script/rbl/ssg.zsc"
+#include "script/rbl/bfg.zsc"
+
+//eof
