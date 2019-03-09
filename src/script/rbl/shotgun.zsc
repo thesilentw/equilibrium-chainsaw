@@ -33,6 +33,7 @@ class RBLShotgun : EQCWeapon replaces Shotgun {
 		Fire:
 			//SHTG A 3;
 			SHTG A 7 {
+				A_GunFlash();
 				A_PlaySound ("weapons/shotgf", CHAN_WEAPON);
 				A_FireBullets(3, 1.5, 10, 5); //buffed damage
 				A_AlertMonsters();
@@ -44,8 +45,8 @@ class RBLShotgun : EQCWeapon replaces Shotgun {
 			SHTG A 10 A_ReFire;
 			Goto Ready;
 		Flash:
-			SHTF A 4 Bright A_Light1;
-			SHTF B 3 Bright A_Light2;
+			SHTF A 3 Bright A_Light1;
+			SHTF B 2 Bright A_Light2;
 			Goto LightDone;
 		Spawn:
 			SHOT A -1;

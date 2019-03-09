@@ -3,6 +3,7 @@ version "3.4"
 #include "script/marine.zsc"
 
 //rebalance
+#include "script/rbl/chainsaw.zsc"
 #include "script/rbl/fist.zsc"
 #include "script/rbl/pistol.zsc"
 #include "script/rbl/shotgun.zsc"
