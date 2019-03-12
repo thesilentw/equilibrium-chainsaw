@@ -3,7 +3,7 @@ Class RBLMarine : DoomPlayer {
 	
 	default {
 		/* debug stuff */
-		
+		/*
 		Player.StartItem "RBLShotgun";
 		Player.StartItem "RBLChaingun";
 		Player.StartItem "RBLRocketLauncher";
@@ -14,7 +14,7 @@ Class RBLMarine : DoomPlayer {
 		Player.StartItem "Shell", 999;
 		Player.StartItem "RocketAmmo", 999;
 		Player.StartItem "Cell", 999;
-		
+		*/
 		Player.StartItem "RBLPistol";
 		Player.StartItem "RBLFist";
 		Player.StartItem "Clip", 40;
