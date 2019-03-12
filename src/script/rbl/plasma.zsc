@@ -35,18 +35,22 @@ class RBLPlasmaRifle : EQCWeapon replaces PlasmaRifle {
 			Loop;
 		Fire:
 			PLSG A 3 {
+				A_GunFlash();
 				switch(random(1,4)) {
 					case 1:
 						A_FireProjectile("RBLPlasmaBall", 0, 1, spawnheight: -10);
+						break;
 					case 2:
 						A_FireProjectile("RBLPlasmaBall1", 0, 1, spawnheight: -10);
+						break;
 					case 3:
 						A_FireProjectile("RBLPlasmaBall2", 0, 1, spawnheight: -10);
+						break;
 					case 4: 
 						A_FireProjectile("RBLPlasmaBall", 0, 0, spawnheight: -10);
+						break;
 				}
 				A_AlertMonsters();
-				A_GunFlash();
 			}
 			PLSG B 15 A_ReFire;
 			Goto Ready;
@@ -80,7 +84,7 @@ class RBLPlasmaBall : Actor {
 		Radius 13;
 		Height 8;
 		Speed 45;
-		Damage 17;
+		DamageFunction (random(1,3)*17);
 		Projectile;
 		+RANDOMIZE
 		+ZDOOMTRANS

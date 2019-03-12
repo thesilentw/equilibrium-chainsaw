@@ -58,9 +58,9 @@ class RBLRocket : FastProjectile {
 		Radius 11;
 		Height 8;
 		Speed 80;
-		Damage 72;
+		DamageFunction (random(1,3)*72);
 		Projectile;
-		//+RANDOMIZE
+		+RANDOMIZE
 		+ROCKETTRAIL
 		+ZDOOMTRANS
 		SeeSound "weapons/rocklf";

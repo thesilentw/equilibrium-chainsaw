@@ -35,7 +35,7 @@ class RBLSuperShotgun : EQCWeapon replaces SuperShotgun {
 			SHT2 A 1 {
 				A_GunFlash();
 				A_PlaySound ("weapons/sshotf", CHAN_WEAPON);
-				A_FireBullets (6.5, 3.1, 24, 8, "BulletPuff");
+				A_FireBullets (6.5, 3.1, 22, 10, "BulletPuff");
 				A_AlertMonsters();
 			}
 			SHT2 A 6 A_WeaponOffset(0, 7, WOF_ADD);

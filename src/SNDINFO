@@ -2,4 +2,14 @@
 // plasma gun ricochet
 weapons/plasma_bounce lpimp
 weapons/punch dspunch
+weapons/shotgun_fire dsshotgn
+weapons/silent dsempty
+
+weapons/shotgun_pump dssgcock
+weapons/shotgun_pump2 dswpnup
+
+$volume weapons/shotgun_pump2 0.4
+$pitchshift weapons/shotgun_pump2 7
+$pitchshift weapons/shotgun_pump 7
+
 // eof
