@@ -1,10 +1,10 @@
 // --------------------------------------------------------------------------
-// Plasma rifle
+// Plasma Rifle
 //
-// The rebalanced plasma rifle's projectiles travel faster and have a chance 
-// to bounce off walls, as well as doing more damage. To offset the high fire
-// rate, 1 in 4 shots have a chance to use no ammo.
-//
+// The rebalanced Plasma Rifle uses an upgraded magnetic field to fire a
+// faster projectile. The field dissapates more slowly, giving the projectiles
+// a chance to bounce off walls. This also results in occasional chain-firing
+// of surplus ionized gas in the firing chamber, effectively giving 'free' shots.
 // --------------------------------------------------------------------------
 
 class RBLPlasmaRifle : EQCWeapon replaces PlasmaRifle {

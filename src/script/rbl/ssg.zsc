@@ -1,10 +1,9 @@
 // --------------------------------------------------------------------------
 // Super Shotgun
 //
-// The rebalanced Super Shotgun has a tighter spread, as well as a slightly 
-// altered reload sequence. It now loads the same heavier buckshot loading 
-// as the pump-action shotgun, and the longer barrel imparts additional velocity.
-//
+// The rebalanced Super Shotgun has a slightly altered reload sequence, and 
+// now fires the same hotter-loaded 12-pellet 00 buckshot that the 
+// pump-action shotgun fires. The long barrel also imparts additional velocity.
 // --------------------------------------------------------------------------
 
 class RBLSuperShotgun : EQCWeapon replaces SuperShotgun {
@@ -37,7 +36,7 @@ class RBLSuperShotgun : EQCWeapon replaces SuperShotgun {
 				A_GunFlash();
 				A_QuakeEx(0, 0, 4, 5, 0, 30, "", flags: QF_RELATIVE|QF_SCALEDOWN);
 				A_PlaySound ("weapons/sshotf", CHAN_WEAPON);
-				A_FireBullets (6.5, 3.1, 27, 7, "BulletPuff");
+				A_FireBullets (6.5, 3.1, 24, 7, "BulletPuff");
 				A_AlertMonsters();
 				A_WeaponOffset(0, 7, WOF_ADD);
 			}

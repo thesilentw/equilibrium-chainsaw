@@ -1,9 +1,6 @@
-Class RBLMarine : DoomPlayer {
-	PlayerInfo player;
-	
+Class RBLMarine : DoomPlayer {	
 	default {
-		/* debug stuff */
-		/*
+		/* debug stuff
 		Player.StartItem "RBLShotgun";
 		Player.StartItem "RBLChaingun";
 		Player.StartItem "RBLRocketLauncher";
@@ -19,23 +16,6 @@ Class RBLMarine : DoomPlayer {
 		Player.StartItem "RBLFist";
 		Player.StartItem "Clip", 40;
 		Player.DisplayName "Marine";
-		
-		//Player.ViewBob 0.5;
 	}
-
-	override void PostBeginPlay() {
-		player = players[consoleplayer];
-		super.PostBeginPlay();
-	}	
-	
-	/*
-	override void Tick() {
-		if (player && testGasShader) {
-			Shader.SetUniform1f(player, "TearGas", "mf_time", (level.totaltime / 35.0));
-			Shader.SetEnabled(player, "TearGas", true);
-		}
-		super.Tick();
-	}
-	*/
 }
 //eof

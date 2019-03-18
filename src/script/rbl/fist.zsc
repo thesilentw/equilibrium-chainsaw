@@ -1,7 +1,8 @@
 // --------------------------------------------------------------------------
 // 	Fist 
 //
-//	The fist is unchanged aside from being slightly faster.
+//	The Marine has been paying better attention to his striking training, and
+//  his knuckle dusters are now quite a force to be reckoned with.
 // --------------------------------------------------------------------------
 
 class RBLFist : EQCWeapon replaces Fist {

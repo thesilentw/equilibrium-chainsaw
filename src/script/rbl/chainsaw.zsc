@@ -1,7 +1,9 @@
 // --------------------------------------------------------------------------
-//
 // Chainsaw
 //
+// Unlike the normal Chainsaw, this is a carbide-toothed rescue saw, intended
+// to cut metals and other man-made obstacles. This, of course, greatly improves
+// its demon-shredding power.
 // --------------------------------------------------------------------------
 
 class RBLChainsaw : EQCWeapon replaces Chainsaw

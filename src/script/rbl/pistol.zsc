@@ -3,7 +3,6 @@
 //
 // The rebalanced pistol is very similar - pinpoint precision, low damage.
 // Cyclic rate has been slightly increased, and it now uses 9mm +P loads.
-//
 // --------------------------------------------------------------------------
 
 class RBLPistol : EQCWeapon replaces Pistol {

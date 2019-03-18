@@ -1,10 +1,12 @@
 // --------------------------------------------------------------------------
+// BFG 9000 mod. 2 - "Catherine"
 //
-// BFG 9000
-//
-// The rebalanced BFG gets some more rays, and no longer depends on the
-// player's position to calculate who gets damaged.
-//
+// No two BFGs are alike - the bizarre mish-mash of teleporter components,
+// phased plasma couplings, and a surplus rocket nacelle defies any attempt 
+// to mass-produce this giant of a weapon.
+// This BFG has a faster than average firing cycle, but vibrates and shakes 
+// alarmingly with every shot. It seems to be more destructive, but at this
+// level of damage, that's a somewhat academic calculation.
 // --------------------------------------------------------------------------
 
 class RBLBFG : EQCWeapon replaces BFG9000 {

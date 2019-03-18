@@ -1,10 +1,10 @@
 // --------------------------------------------------------------------------
 // Shotgun
 //
-// The rebalanced shotgun trades in the duckbill barrel for a more normal spread. 
-// In addition, it now fires a heavier buckshot loading, with additional pellets.
-// 
-// 
+// The rebalanced shotgun trades in the duckbill for a more conventional
+// barrel. In addition, it now fires a hotter buckshot loading with more  
+// pellets. This model does require a more deliberate stroke of the pump 
+// to load the next round, but the additonal power is well worth it.
 // --------------------------------------------------------------------------
 
 class RBLShotgun : EQCWeapon replaces Shotgun {
