@@ -95,6 +95,7 @@ class RBLPlasmaBall : Actor {
 		DeathSound "weapons/plasmax";
 		Obituary "$OB_MPPLASMARIFLE";
 		Translation "0:255=%[0.1, 0.1, 0.9]:[1.0, 1.0, 1.0]";
+		Decal "Scorch";
 	}
 	
 	States {

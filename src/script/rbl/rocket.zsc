@@ -58,7 +58,7 @@ class RBLRocket : FastProjectile {
 		Radius 11;
 		Height 8;
 		Speed 80;
-		DamageFunction (random(1,3)*72);
+		DamageFunction (random(1,3)*32);
 		Projectile;
 		+RANDOMIZE
 		+ROCKETTRAIL
@@ -73,7 +73,7 @@ class RBLRocket : FastProjectile {
 			MISL A 1 Bright;
 			Loop;
 		Death:
-			MISL B 3 Bright A_Explode;
+			MISL B 3 Bright A_Explode(128, 128);
 			MISL C 3 Bright;
 			MISL D 3 Bright;
 			Stop;

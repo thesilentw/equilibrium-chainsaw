@@ -19,6 +19,7 @@ class RBLPistol : EQCWeapon replaces Pistol {
 		+WEAPON.WIMPY_WEAPON
 		Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED";
 		Tag "$TAG_PISTOL";
+		Decal "BulletChip";
 	}
 	
 	States {
@@ -36,7 +37,7 @@ class RBLPistol : EQCWeapon replaces Pistol {
 			PISG B 2 {
 				A_PlaySound ("weapons/pistol", CHAN_WEAPON);
 				A_AlertMonsters();
-				A_FireBullets(0.5, 0.5, 1, 7); //damage buffed
+				A_FireBullets(0.5, 0.5, 1, 7, "BulletPuff"); //damage buffed
 				A_GunFlash();
 			}
 			PISG E 4;
