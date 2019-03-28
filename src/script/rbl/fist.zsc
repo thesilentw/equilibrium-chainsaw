@@ -21,6 +21,9 @@ class RBLFist : EQCWeapon replaces Fist {
 	}
 	
 	States {
+		Spawn:
+			TNT1 A -1;
+			Loop;
 		Ready:
 			PUNG A 1 A_WeaponReady;
 			Loop;

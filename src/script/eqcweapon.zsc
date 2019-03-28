@@ -1,7 +1,7 @@
 /// EQCWeapon.zsc
 /// Prototype weapon
 ///
-Class EQCWeapon : DoomWeapon {
+Class EQCWeapon : DoomWeapon abstract {
 	default {
 		inventory.pickupMessage "OBTAINED DEFAULT WEAPON - THIS IS A BUG";
 		weapon.slotNumber 9;
@@ -14,9 +14,9 @@ Class EQCWeapon : DoomWeapon {
 		Weapon.BobRangeY 0.5;
 		+WEAPON.NODEATHINPUT;
 		Decal "BulletChip";
-	}
-		
-	States {
+	}	
+	
+	states {
 		Ready:
 			SHTG A 1 A_WeaponReady();
 			Loop;
@@ -35,3 +35,5 @@ Class EQCWeapon : DoomWeapon {
 			Stop;
 	}
 }
+
+//eof

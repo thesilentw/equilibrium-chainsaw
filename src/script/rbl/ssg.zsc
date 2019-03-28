@@ -36,7 +36,7 @@ class RBLSuperShotgun : EQCWeapon replaces SuperShotgun {
 				A_GunFlash();
 				A_QuakeEx(0, 0, 4, 5, 0, 30, "", flags: QF_RELATIVE|QF_SCALEDOWN);
 				A_PlaySound ("weapons/sshotf", CHAN_WEAPON);
-				A_FireBullets (6.5, 3.1, 24, 7, "BulletPuff");
+				A_FireBullets (6.5, 3.1, 24, 7, "BulletPuff"); //default multiplier is ok
 				A_AlertMonsters();
 				A_WeaponOffset(0, 7, WOF_ADD);
 			}

@@ -38,7 +38,7 @@ class RBLShotgun : EQCWeapon replaces Shotgun {
 			SHTG A 5 {
 				A_GunFlash();
 				A_PlaySound("weapons/shotgun_fire", CHAN_WEAPON);
-				A_FireBullets(3, 1.5, 12, 6, "BulletPuff");
+				A_FireBullets(3, 1.5, 12, 7, "BulletPuff"); // default multiplier is ok
 				A_AlertMonsters();
 				A_WeaponOffset(0, 7, WOF_ADD);
 			}

@@ -98,12 +98,12 @@ class RBLBFGBall : Actor {
 	
 	States {
 		Spawn:
-			BFS1 AB 4 Bright;
+			BFS1 AB 2 Bright;
 			Loop;
 		Death:
-			BFE1 AB 8 Bright;
-			BFE1 C 8 Bright A_BFGSpray;
-			BFE1 DEF 8 Bright;
+			BFE1 AB 4 Bright;
+			BFE1 C 4 Bright A_BFGSpray;
+			BFE1 DEF 4 Bright;
 			Stop;
 	}
 	
@@ -178,7 +178,7 @@ class RBLBFGExtra : Actor {
 	
 	States {
 		Spawn:
-			BFE2 ABCD 8 Bright;
+			BFE2 ABCD 4 Bright;
 			Stop;
 	}
 }
